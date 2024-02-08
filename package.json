@@ -1,0 +1,31 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "Silly little CLI Hangman game with Node.JS",
+  "main": "./index.js",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm run build",
+    "dev": "npx tsx --watch ./src/index.ts",
+    "start": "node .bin",
+    "test": "npm run jest",
+    "build": "npm run jest && npm run esbuild",
+    "jest": "jest",
+    "esbuild": "esbuild ./src/index.ts --bundle --platform=node --target=node20 --outdir=build --allow-overwrite"
+  },
+  "keywords": ["hangman"],
+  "author": "Bence Kormos <kormos.bence@gmail.com>",
+  "license": "ISC",
+  "bin": ".bin/index.js",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.16",
+    "esbuild": "^0.20.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "random-words": "^2.0.1"
+  }
+}
